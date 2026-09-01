@@ -31,7 +31,7 @@ export default function Footer() {
 
         <div className="footer-links-col">
           <span className="footer-col-label mono">NAVIGATE</span>
-          <nav className="footer-nav">
+          <nav className="footer-nav" aria-label="Footer section navigation">
             {NAV_LINKS.map((link) => (
               <a key={link.href} href={link.href} className="footer-nav-link mono">
                 {link.label.toUpperCase()}
@@ -42,7 +42,7 @@ export default function Footer() {
 
         <div className="footer-links-col">
           <span className="footer-col-label mono">CONNECT</span>
-          <nav className="footer-nav">
+          <nav className="footer-nav footer-social-nav" aria-label="Footer social links">
             <a
               href={personal.socials.github}
               target="_blank"
