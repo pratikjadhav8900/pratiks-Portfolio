@@ -15,6 +15,17 @@ export default function Services() {
     setSelectedService(null);
   }, []);
 
+  // Lock body scroll when service modal is open
+  useEffect(() => {
+    if (selectedService) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [selectedService]);
+
   // Keyboard close
   useEffect(() => {
     if (!selectedService) return;

@@ -7,6 +7,7 @@ export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [label, setLabel] = useState<string>("");
   const [isHovered, setIsHovered] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(false);
 
   const rawX = useMotionValue(-100);
   const rawY = useMotionValue(-100);
@@ -14,6 +15,14 @@ export default function CustomCursor() {
   const y = useSpring(rawY, { stiffness: 200, damping: 28, mass: 0.5 });
 
   useEffect(() => {
+    // Only enable on desktop with fine pointer
+    const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 1024;
+    if (isTouch) {
+      setIsEnabled(false);
+      return;
+    }
+    setIsEnabled(true);
+
     const onMove = (e: MouseEvent) => {
       rawX.set(e.clientX);
       rawY.set(e.clientY);
@@ -46,6 +55,8 @@ export default function CustomCursor() {
       document.removeEventListener("mouseout", onLeave);
     };
   }, [rawX, rawY]);
+
+  if (!isEnabled) return null;
 
   return (
     <motion.div
