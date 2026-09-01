@@ -15,13 +15,15 @@ export default function CustomCursor() {
   const y = useSpring(rawY, { stiffness: 200, damping: 28, mass: 0.5 });
 
   useEffect(() => {
-    // Only enable on desktop with fine pointer
-    const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 1024;
-    if (isTouch) {
-      setIsEnabled(false);
-      return;
-    }
-    setIsEnabled(true);
+    const updateEnabled = () => {
+      const isTouch =
+        window.matchMedia("(pointer: coarse)").matches ||
+        window.innerWidth <= 1024;
+      setIsEnabled(!isTouch);
+    };
+
+    updateEnabled();
+    window.addEventListener("resize", updateEnabled);
 
     const onMove = (e: MouseEvent) => {
       rawX.set(e.clientX);
@@ -50,6 +52,7 @@ export default function CustomCursor() {
     document.addEventListener("mouseover", onEnter);
     document.addEventListener("mouseout", onLeave);
     return () => {
+      window.removeEventListener("resize", updateEnabled);
       window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseover", onEnter);
       document.removeEventListener("mouseout", onLeave);

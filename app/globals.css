@@ -165,8 +165,13 @@ img, video {
   opacity: 1;
 }
 
-@media (pointer: coarse) {
-  .custom-cursor { display: none !important; }
+@media (pointer: coarse), (max-width: 1024px) {
+  .custom-cursor {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }
 
 /* ================================================== 
