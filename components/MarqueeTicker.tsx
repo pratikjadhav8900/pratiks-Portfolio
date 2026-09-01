@@ -1,7 +1,7 @@
 "use client";
 
 const TICKER_TEXT =
-  "PRATIK JADHAV · DEVELOPER · PRODUCT BUILDER · AI · FULL-STACK · PUNE, INDIA ·";
+  "PRATIK JADHAV · FULL-STACK DEVELOPER · AI TOOLS & AGENTIC WORKFLOWS · AUTOMATION · PUNE, INDIA ·";
 
 export default function MarqueeTicker() {
   // Triple for seamless loop

@@ -19,31 +19,52 @@ function ProjectRow({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.65, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
     >
-      <Link
-        href={`/work/${project.slug}`}
-        className="project-row-link"
-        data-cursor="VIEW CASE"
-      >
-        <span className="project-number mono">{project.number}</span>
+      <div className="project-row-inner">
+        <Link
+          href={`/work/${project.slug}`}
+          className="project-row-link"
+          data-cursor="VIEW CASE"
+        >
+          <span className="project-number mono">{project.number}</span>
 
-        <div className="project-title">
-          <h2>{project.name}</h2>
-          <div className="project-meta">
-            <span className="project-category mono">{project.category}</span>
-            <div className="project-tech-tags">
-              {project.techStack.slice(0, 3).map((tech) => (
-                <span key={tech} className="project-tech-tag">{tech}</span>
-              ))}
+          <div className="project-title">
+            <h2>{project.name}</h2>
+            <div className="project-meta">
+              <span className="project-category mono">{project.category}</span>
+              <div className="project-tech-tags">
+                {project.techStack.slice(0, 3).map((tech) => (
+                  <span key={tech} className="project-tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        <p className="project-desc">{project.description}</p>
+          <p className="project-desc">{project.description}</p>
+        </Link>
 
-        <div className="project-arrow-wrap">
-          <span className="arrow">↗</span>
+        <div className="project-actions-wrap">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="project-live-btn mono"
+              data-cursor="LIVE"
+              title={`Open ${project.name} Live Demo`}
+            >
+              <i className="status-dot" /> LIVE DEMO ↗
+            </a>
+          )}
+          <Link
+            href={`/work/${project.slug}`}
+            className="project-arrow-wrap"
+            aria-label={`View ${project.name} case study`}
+            data-cursor="VIEW CASE"
+          >
+            <span className="arrow">↗</span>
+          </Link>
         </div>
-      </Link>
+      </div>
     </motion.article>
   );
 }

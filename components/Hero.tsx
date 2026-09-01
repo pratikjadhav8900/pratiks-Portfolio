@@ -72,7 +72,7 @@ export default function Hero() {
             <span>{personal.location.toUpperCase()} · OPEN TO THE WORLD</span>
           </div>
           <div className="hero-role mono">
-            DEVELOPER & PRODUCT BUILDER
+            FULL-STACK DEVELOPER &amp; AI SPECIALIST
           </div>
         </div>
 
@@ -83,7 +83,7 @@ export default function Hero() {
               <AnimatedLine delay={0.1}>HI, I&apos;M</AnimatedLine>
               <AnimatedLine delay={0.25}>PRATIK</AnimatedLine>
               <AnimatedLine delay={0.4}>
-                <span className="italic-word">builder.</span>
+                <span className="italic-word">full-stack dev.</span>
                 <motion.span
                   className="hero-inline-badge"
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -102,7 +102,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.65 }}
             >
-              DEVELOPER&nbsp;&nbsp;/&nbsp;&nbsp;PRODUCT BUILDER&nbsp;&nbsp;/&nbsp;&nbsp;CREATIVE TECHNOLOGIST
+              FULL-STACK DEVELOPER&nbsp;&nbsp;/&nbsp;&nbsp;AI TOOLS &amp; AUTOMATION&nbsp;&nbsp;/&nbsp;&nbsp;DATA ANALYST
             </motion.p>
           </div>
 
@@ -114,8 +114,8 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.8 }}
           >
             <p className="hero-intro-text">
-              I build <strong>digital products</strong>, web experiences &amp;{" "}
-              <strong>software</strong> that solve real-world problems.
+              I build high-performance <strong>full-stack web applications</strong>, desktop software &amp;{" "}
+              <strong>AI-assisted systems</strong> that solve real-world problems.
             </p>
 
             <div className="hero-cta-group">
@@ -155,38 +155,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-
-      {/* Story bridge CTA */}
-      <motion.div
-        className="hero-story-bridge"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 0.6 }}
-      >
-        <a
-          href="#story"
-          className="hero-story-link mono"
-          aria-label="Read the 60 second version"
-          onClick={(e) => {
-            e.preventDefault();
-            document.getElementById("story")?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          THE 60 SECOND VERSION ↓
-        </a>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="scroll-hint"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
-      >
-        <div className="scroll-track">
-          <div className="scroll-thumb" />
-        </div>
-      </motion.div>
     </section>
   );
 }

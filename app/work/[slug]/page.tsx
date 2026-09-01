@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { projectsData } from "@/lib/projectsData";
 import Navigation from "@/components/Navigation";
@@ -43,21 +44,91 @@ export default async function ProjectDetailPage({
           <div className="header-meta">
             <span className="case-num mono">{project.number}</span>
             <span className="case-cat mono">{project.category}</span>
+            {project.badge && (
+              <span className="case-badge-pill mono">
+                <i className="status-dot" /> {project.badge}
+              </span>
+            )}
           </div>
 
-          <h1 className="case-title">{project.name}</h1>
+          <div className="case-title-row">
+            <h1 className="case-title">{project.name}</h1>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="case-live-btn mono"
+                data-cursor="LAUNCH"
+              >
+                <i className="status-dot" /> VISIT LIVE WEBSITE ↗
+              </a>
+            )}
+          </div>
           <p className="case-tagline">{project.tagline}</p>
         </header>
 
+        {/* Quick Highlights Metrics Bar */}
+        {project.highlights && project.highlights.length > 0 && (
+          <section className="case-metrics-bar">
+            {project.highlights.map((h) => (
+              <div key={h.label} className="case-metric-item">
+                <span className="case-metric-label mono">{h.label}</span>
+                <span className="case-metric-value">{h.value}</span>
+              </div>
+            ))}
+          </section>
+        )}
+
         {/* Tech Stack Pills */}
         <section className="case-tech-section">
-          <h3 className="section-subhead mono">TECHNOLOGY STACK</h3>
+          <h3 className="section-subhead mono">TECHNOLOGY STACK &amp; ARCHITECTURE</h3>
           <div className="tech-pills-row">
             {project.techStack.map((tech) => (
               <span key={tech} className="tech-pill">
                 {tech}
               </span>
             ))}
+          </div>
+        </section>
+
+        {/* Media / Visual Showcase Section */}
+        <section className="case-media-section">
+          <div className="case-visual-frame">
+            <div className="case-visual-top-bar">
+              <div className="window-dots">
+                <span className="dot dot-red" />
+                <span className="dot dot-yellow" />
+                <span className="dot dot-green" />
+              </div>
+              <span className="window-title mono">
+                {project.slug === "tailoring-turba" ? "tailoringturba.com — Interactive Customizer" : "CoreG1 — Enterprise Inventory & Control Center"}
+              </span>
+              <span className="window-status mono">
+                {project.liveUrl ? "LIVE DEPLOYMENT" : "OFFLINE-FIRST BUILD"}
+              </span>
+            </div>
+
+            <div className="case-visual-image-wrap">
+              <img
+                src={project.imagePlaceholder}
+                alt={`${project.name} preview showcase`}
+                className="case-showcase-img"
+              />
+              {project.liveUrl && (
+                <div className="visual-live-overlay">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="visual-launch-btn mono"
+                    data-cursor="LAUNCH"
+                  >
+                    <span>OPEN DIRECT DEMO ↗</span>
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         </section>
 
@@ -74,25 +145,15 @@ export default async function ProjectDetailPage({
           </div>
         </section>
 
-        {/* Media Placeholder Showcase */}
-        <section className="case-media-section">
-          <div className="media-placeholder-card">
-            <div className="placeholder-content">
-              <span className="mono">INTERACTIVE PREVIEW / SCREENSHOT PLACEHOLDER</span>
-              <p>[ Upload screenshot for {project.name} to public/images/projects/{project.slug}.png ]</p>
-            </div>
-          </div>
-        </section>
-
         {/* Solution & Architecture */}
         <section className="case-block-full">
-          <h2 className="case-heading">Solution &amp; Architecture</h2>
+          <h2 className="case-heading">Solution &amp; Engineering Design</h2>
           <p className="case-text">{project.solution}</p>
         </section>
 
         {/* Key Features */}
         <section className="case-features-section">
-          <h2 className="case-heading">Key Features</h2>
+          <h2 className="case-heading">Key Features &amp; Modules</h2>
           <ul className="features-list">
             {project.features.map((feature, i) => (
               <li key={i} className="feature-item">
@@ -111,7 +172,7 @@ export default async function ProjectDetailPage({
           </div>
 
           <div className="case-block">
-            <h2 className="case-heading">Outcome</h2>
+            <h2 className="case-heading">Impact &amp; Outcome</h2>
             <p className="case-text">{project.outcome}</p>
           </div>
         </section>

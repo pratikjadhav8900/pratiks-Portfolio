@@ -15,114 +15,104 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   imagePlaceholder: string;
+  badge?: string;
+  highlights?: { label: string; value: string }[];
 }
 
 export const projectsData: Project[] = [
   {
-    slug: "tyfoon",
+    slug: "tailoring-turba",
     number: "01",
-    name: "TYFOON",
-    category: "AI JOB DISCOVERY PLATFORM",
-    tagline: "Personalized AI-powered job discovery, resume normalization & opportunity manager.",
+    name: "TAILORING TURBA",
+    category: "CLOTHING MANUFACTURING & BESPOKE E-COMMERCE",
+    tagline: "Live bulk apparel manufacturing & bespoke custom tailoring e-commerce platform across India.",
     description:
-      "A personal job-search system built to discover, normalize, tailor, and manage real opportunities across tech hubs.",
+      "A high-end clothing manufacturing and bespoke tailoring platform built from scratch with interactive customizers, real-time measurement inputs, and automated production pipelines.",
     fullOverview:
-      "TYFOON is an intelligent career discovery platform designed to strip away spam and low-signal job postings. It aggregates real-time listings, normalizes job descriptions using LLMs, matches tech stacks against candidate profiles, and assists in tailoring applications efficiently.",
+      "Tailoring Turba is a full-scale web platform built for a modern clothing manufacturing and custom tailoring brand. Engineered single-handedly from architectural design to cloud deployment, the platform powers the entire customer journey—from bespoke 3D/interactive garment customization and custom measurements to an intuitive admin management suite for catalogs, materials, and custom orders.",
     problem:
-      "Modern job searching is fragmented across dozens of boards with inconsistent titles, keyword stuffing, and outdated listings. Candidates waste hundreds of hours manually filtering irrelevance.",
+      "Traditional custom tailoring and garment manufacturing struggle with fragmented communication, inaccurate manual measurement collection, disconnected inventory & fabric tracking, and generic e-commerce templates that fail to capture the craftsmanship of bespoke luxury apparel.",
     solution:
-      "Built a unified ingestion engine and LLM-assisted processing pipeline that categorizes roles, extracts tech stack requirements, grades relevance scores, and manages application stages in a clean, unified workflow.",
+      "Architected and developed a unified fashion platform featuring an interactive Garment Journey customizer, custom measurement calculation logic, material selection showcase, real-time order tracking, and an admin management dashboard for live product and order handling. Built using modern agentic AI-assisted development workflows for rapid iteration and high quality.",
     techStack: [
       "Next.js",
+      "React",
       "TypeScript",
-      "Python",
-      "FastAPI",
-      "LLM / OpenAI API",
-      "PostgreSQL",
       "TailwindCSS",
+      "Framer Motion",
+      "Spline / 3D",
+      "Node.js",
+      "PostgreSQL / REST APIs",
+      "Agentic AI (Sonnet & Gemini)",
     ],
     features: [
-      "Automated job listing aggregation and deduplication pipeline",
-      "AI-driven skill matching & candidate compatibility score",
-      "Resume tailoring recommendations based on raw job specs",
-      "Kanban-style application tracker with status workflow",
-      "Real-time notifications & bookmarking dashboard",
+      "Interactive Garment Customizer & Material Selection with rich visual feedback",
+      "Precision bespoke measurement input engine with validation and fit recommendations",
+      "Admin management panel for product catalogs, custom order statuses, and pricing",
+      "High-performance responsive UI with fluid page transitions & smooth micro-interactions",
+      "Complete SEO architecture, custom metadata, and optimized Core Web Vitals",
+      "End-to-end deployment with domain setup, automated testing, and production monitoring",
     ],
     challenges:
-      "Handling unstructured job description formats from diverse sources required building robust parsing prompts and robust error fallbacks.",
+      "Balancing rich visual motion, high-resolution textile textures, and complex multi-step customizer state without compromising page load speeds or mobile responsiveness.",
     outcome:
-      "Transformed job discovery from a manual multi-site chore into a streamlined, high-signal command center.",
-    imagePlaceholder: "/images/projects/tyfoon-preview.jpg",
+      "Delivered and deployed a live, commercial-grade clothing manufacturing platform in ~2 months, enabling seamless bespoke garment ordering, reducing order ambiguity, and streamlining operational handoffs.",
+    liveUrl: "https://tailoringturba.com",
+    imagePlaceholder: "/images/projects/turba-preview.jpg",
+    badge: "LIVE PRODUCTION SITE",
+    highlights: [
+      { label: "Deployment", value: "Production Live" },
+      { label: "Delivery Time", value: "~2 Months" },
+      { label: "Architecture", value: "Full-Stack Next.js" },
+      { label: "Customizer", value: "3D & Interactive" },
+    ],
   },
   {
     slug: "coreg1",
     number: "02",
-    name: "COREG1",
-    category: "ENTERPRISE POS / ERP",
-    tagline: "Commercial-grade inventory, billing, and enterprise business management platform.",
+    name: "COREG1 INVENTORY SOFTWARE",
+    category: "OFFLINE-FIRST INVENTORY MANAGEMENT & POS",
+    tagline: "Commercial-grade offline-first inventory management, barcode billing & ERP desktop software built with Electron, React, and SQLite.",
     description:
-      "A commercial-grade inventory, billing and business management experience built for performance and reliability.",
+      "A complete offline-first desktop management software for retail and wholesale businesses, featuring instant barcode billing, real-time stock valuation, credit sales ledgers, and automated daily backups.",
     fullOverview:
-      "COREG1 is a full-featured Point of Sale (POS) and Enterprise Resource Planning (ERP) platform designed for retail and wholesale businesses. It supports multi-store inventory tracking, high-speed checkout billing, tax reporting, and analytical insights.",
+      "CoreG1 is a modern desktop inventory management software and Point of Sale (POS) system engineered for retail businesses, wholesalers, and supply chain operations. Built with Electron 28, React 18, and an embedded SQLite database engine, the software operates completely offline with instant sub-millisecond query responses, eliminating internet downtime during peak store hours. It provides end-to-end sales billing, automated batch-level stock depletion, low-inventory alerts, customer credit ledger tracking, vendor purchase returns, and automatic daily database backups.",
     problem:
-      "Legacy POS systems suffer from slow interfaces, complex multi-step billing, clunky offline handling, and poor inventory synchronization across store locations.",
+      "Retailers and warehouse operators face long checkout queues, inventory discrepancies, stockouts, frequent credit sales, and volatile internet connections. Legacy MS-DOS/DBF inventory software is outdated, prone to data corruption, and difficult to operate, while modern cloud-only POS systems cause disastrous billing halts whenever internet connectivity drops.",
     solution:
-      "Engineered an ultra-responsive web dashboard with keyboard shortcuts for rapid barcode billing, real-time inventory updates, and multi-tenant store role management.",
+      "Designed and built a resilient offline-first desktop architecture using Electron and SQLite, paired with a modern glassmorphic React UI. Implemented custom IPC handlers for high-speed barcode scanner inputs and thermal printing, an automated stock valuation and batch tracking engine, a customer credit management system with debt aging ledgers, and automated migration scripts to seamlessly convert legacy DBF data into relational SQLite schemas.",
     techStack: [
-      "React",
-      "TypeScript",
+      "Electron 28",
+      "React 18",
+      "SQLite (Offline-First)",
       "Node.js",
-      "Express",
-      "PostgreSQL",
-      "Prisma",
-      "Chart.js",
+      "JavaScript (ES6+)",
+      "IPC Architecture",
+      "Playwright & Jest",
+      "NSIS Installer",
     ],
     features: [
-      "High-speed barcode scanning & instant receipt generation",
-      "Multi-location inventory tracking with low-stock alerts",
-      "Daily sales reporting, GST/tax calculation & analytics summaries",
-      "User role permissions (Cashier, Manager, Admin)",
-      "Customer purchase history & loyalty tracking",
+      "High-Speed Barcode Checkout with keyboard-first shortcuts and automated GST/tax invoicing",
+      "Real-Time Stock Valuation & Inventory Tracking with automated reorder alerts",
+      "Customer Credit Sales Ledger with partial payment collection and debt balance aging",
+      "Vendor Purchase Management with automated stock-in reconciliation and supplier ledgers",
+      "Customer & Supplier Directory with full transaction histories and reference tracking",
+      "Comprehensive Business Analytics: fast/slow-moving items, daily profit margins, and GST reports",
+      "Automated Daily Database Backups and zero-configuration data recovery tools",
+      "Legacy Data Migration Utility (DBF to SQLite) for seamless onboarding of existing retail stores",
+      "Native Windows Installer (.exe) & Portable executable packaged via NSIS",
     ],
     challenges:
-      "Optimizing database transactions during peak checkout hours required indexing key lookup fields and implementing pessimistic concurrency locks.",
+      "Achieving sub-10ms UI responsiveness during rapid multi-item barcode scanning while maintaining synchronous ACID database writes in SQLite across complex relational tables (Sales, Batches, Inventory, Ledger) without blocking the React main thread.",
     outcome:
-      "Delivered a reliable POS/ERP experience that minimizes checkout latency and streamlines inventory reconciliation.",
+      "Delivered a rock-solid, commercial-grade desktop inventory management system capable of operating 100% offline, reducing checkout time by over 50% and eliminating stock discrepancies with automated inventory reconciliation.",
     imagePlaceholder: "/images/projects/coreg1-preview.jpg",
-  },
-  {
-    slug: "tailoring-turba",
-    number: "03",
-    name: "TAILORING TURBA",
-    category: "FASHION E-COMMERCE",
-    tagline: "Editorial fashion storefront with bespoke design system and smooth visual storytelling.",
-    description:
-      "A premium fashion storefront with a strong editorial visual identity and tailored shopping experience.",
-    fullOverview:
-      "TAILORING TURBA is an e-commerce platform tailored for bespoke fashion and luxury apparel. Built with an editorial visual aesthetic, dynamic product showcases, custom fitting options, and seamless cart checkout.",
-    problem:
-      "Standard e-commerce templates lack personality and fail to convey the craftsmanship of custom tailored luxury apparel.",
-    solution:
-      "Designed a visually striking, editorial-style storefront with smooth image transitions, custom size customization forms, and fluid cart animations.",
-    techStack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Framer Motion",
-      "Stripe API",
-      "TailwindCSS",
+    badge: "OFFLINE-FIRST DESKTOP APPLICATION",
+    highlights: [
+      { label: "Environment", value: "100% Offline-First" },
+      { label: "Framework", value: "Electron 28 + React 18" },
+      { label: "Database", value: "Embedded SQLite" },
+      { label: "Distribution", value: "Windows EXE & Portable" },
     ],
-    features: [
-      "Editorial product showcase with micro-interactions",
-      "Bespoke measurement customization form for custom tailors",
-      "Slide-out quick cart & instant checkout flow",
-      "Dynamic filtering by collection, fabric, and fit",
-      "Fully responsive mobile-first shopping UI",
-    ],
-    challenges:
-      "Combining complex Framer Motion transitions with high-resolution apparel imagery required careful image optimization and lazy-loading strategies.",
-    outcome:
-      "Created an immersive fashion e-commerce experience that balances high aesthetics with fast load performance.",
-    imagePlaceholder: "/images/projects/turba-preview.jpg",
   },
 ];

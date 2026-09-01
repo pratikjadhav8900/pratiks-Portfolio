@@ -51,6 +51,17 @@ function ExperienceCard({
               </div>
               <div className="exp-meta">
                 <span className="exp-company">{item.company}</span>
+                {item.id.includes("tailoring-turba") && (
+                  <a
+                    href="https://tailoringturba.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="exp-company-live-link mono"
+                    data-cursor="VISIT"
+                  >
+                    tailoringturba.com ↗
+                  </a>
+                )}
                 <span className="exp-meta-sep">·</span>
                 <span className="exp-location mono">{item.location}</span>
               </div>

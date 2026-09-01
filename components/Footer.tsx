@@ -23,7 +23,7 @@ export default function Footer() {
             <span className="footer-logo-mark">{personal.initials}</span>
             <div>
               <span className="footer-name mono">{personal.name.toUpperCase()}</span>
-              <span className="footer-role-tag mono">DEVELOPER · PRODUCT BUILDER</span>
+              <span className="footer-role-tag mono">FULL-STACK DEVELOPER · AI TOOLS &amp; AUTOMATION</span>
             </div>
           </Link>
           <p className="footer-tagline">{personal.openTo}</p>

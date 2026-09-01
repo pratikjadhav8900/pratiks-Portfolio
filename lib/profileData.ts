@@ -6,11 +6,11 @@
 export const personal = {
   name: "Pratik Jadhav",
   initials: "PJ",
-  role: "Data Analyst · Full-Stack Developer · Automation",
-  tagline: "Data Analyst / Full-Stack Developer / Automation",
+  role: "Full-Stack Developer · AI Tools & Automation · Data Analyst",
+  tagline: "Full-Stack Developer / AI Tools & Automation / Data Analyst",
   bio: [
-    "Data Analyst & Founding Full-Stack Developer with expertise in SQL, Power BI, automation, Python, and full-stack web development.",
-    "Experienced in freelancing (15+ projects), teaching (150+ students), inside sales (10x revenue generation), and building complete production websites from scratch using agentic AI.",
+    "Full-Stack Developer & Data Analyst with deep expertise in AI tools (Sonnet 4.6, Gemini 3.1 Pro), Python, React/Next.js, SQL, Power BI, and workflow automation.",
+    "Experienced in building complete production platforms from scratch using agentic AI, delivering 15+ freelancing projects, and engineering commercial desktop & web applications.",
   ],
   location: "Pune, Maharashtra, India",
   phone: "+91 9420434728",
@@ -294,7 +294,7 @@ export const whatIDo = [
 ];
 
 export const currently = {
-  building: "TYFOON",
+  building: "Tailoring Turba Platform",
   exploring: "AI + Product Development",
   openTo: "Engineering & Product Opportunities",
 };
@@ -327,8 +327,8 @@ export const story = {
       eyebrow: "WHO AM I?",
       title: "I'm Pratik.",
       titleItalic: undefined,
-      subtitle: ["Developer.", "Product builder.", "Creative technologist."],
-      body: "I like taking ideas — rough thoughts, real problems, half-baked sketches — and turning them into things people can actually use.",
+      subtitle: ["Full-Stack Developer.", "AI Tools & Automation.", "Data Analyst."],
+      body: "I engineer full-stack web platforms, modern desktop software, and intelligent AI-powered workflows.",
       type: "default",
     },
     {
@@ -524,8 +524,8 @@ export const servicesData: ServiceItem[] = [
     ],
     techStack: ["Python", "LangChain", "OpenAI / Anthropic APIs", "Vector DBs", "Node.js"],
     relatedProject: {
-      name: "Tyfoon AI Engine",
-      slug: "tyfoon",
+      name: "Tailoring Turba Platform",
+      slug: "tailoring-turba",
     },
   },
   {
@@ -560,7 +560,7 @@ export const servicesData: ServiceItem[] = [
     ],
     techStack: ["SQL / PostgreSQL", "Power BI", "Excel", "Python / Pandas"],
     relatedProject: {
-      name: "CoreG1 Enterprise POS",
+      name: "CoreG1 Inventory Software",
       slug: "coreg1",
     },
   },
