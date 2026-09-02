@@ -523,10 +523,6 @@ export const servicesData: ServiceItem[] = [
       "Interactive Assistant Interfaces",
     ],
     techStack: ["Python", "LangChain", "OpenAI / Anthropic APIs", "Vector DBs", "Node.js"],
-    relatedProject: {
-      name: "Tailoring Turba Platform",
-      slug: "tailoring-turba",
-    },
   },
   {
     id: "website-maintenance",
